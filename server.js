@@ -5,7 +5,7 @@ const server = new Turn({
   debugLevel: "ALL",
   credentials: {
     username: "username",
-    password: "password",
+    credential: "password",
   },
 });
 
