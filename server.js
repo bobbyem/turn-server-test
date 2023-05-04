@@ -9,5 +9,11 @@ const server = new Turn({
   },
 });
 
-// console.log(server);
+function logAlot() {
+  setInterval(() => {
+    console.log(new Date(), "LogALot");
+  }, 5000);
+}
+
+logAlot();
 server.start();
