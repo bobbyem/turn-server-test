@@ -1,19 +1,17 @@
 const Turn = require("node-turn");
+const os = require("os");
+const networkinterfaces = os.networkInterfaces();
 const server = new Turn({
   // set options
-  authMech: "none",
+  authMech: "long-term",
   debugLevel: "DEBUG",
   credentials: {
     username: "password",
     credential: "password",
   },
+  listeningTcp: true,
 });
 
-function logAlot() {
-  setInterval(() => {
-    console.log(new Date(), "LogALot");
-  }, 5000);
-}
+console.log("🚀 ~ file: server.js:4 ~ networkinterfaces:", networkinterfaces);
 
-logAlot();
 server.start();
